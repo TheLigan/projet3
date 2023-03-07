@@ -1,5 +1,50 @@
-h1 {
-    color: red;
- }
+.blocText__p, .localisation__text {
+  font-family: "Roboto";
+  font-size: 15px;
+}
+
+.blocText__H1 {
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header > .logo {
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header > .return {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.localisation {
+  background-color: #DADADA;
+  box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.localisation__logo {
+  margin: 15px;
+}
+.blocText {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,11 +1,37 @@
-.blocText__p, .localisation__text {
+@charset "UTF-8";
+header > .logo {
+  font-family: "Shrikhand";
+  font-size: 25px;
+}
+
+.Menu > button, .V2__text, .V1__text, .blocText__button, .blocText__p, .localisation__text {
   font-family: "Roboto";
   font-size: 15px;
 }
 
-.blocText__H1 {
+.Restaurants__titre, .Fonctionnement__titre, .blocText__h2 {
   font-family: "Roboto";
   font-size: 25px;
+}
+
+body footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #454545;
+}
+body footer > h2 {
+  font-family: "Shrikhand";
+  font-size: 15px;
+  color: white;
+  margin: 10px;
+}
+body footer > .footerList {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+body footer > .footerList > a {
+  color: white;
 }
 
 body {
@@ -20,13 +46,16 @@ header {
   align-items: center;
 }
 header > .logo {
-  height: 25px;
   margin-left: auto;
   margin-right: auto;
 }
 header > .return {
   margin-left: 10px;
   font-size: 20px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .localisation {
@@ -45,6 +74,251 @@ header > .return {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+}
+.blocText__h2 {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 0px;
+}
+.blocText__p {
+  text-align: center;
+  margin-top: 5px;
+}
+.blocText__button {
+  background: linear-gradient(to bottom right, #FF79DA 5%, #9356DC);
+  border-radius: 30px 30px 30px 30px;
+  margin-bottom: 50px;
+  border-style: none;
+  padding: 20px;
+  transition-property: all;
+  transition-duration: all 1000ms;
+}
+.blocText__button > a {
+  color: white;
+}
+.blocText__button:hover {
+  background: linear-gradient(to bottom right, #ff93e1 5%, #a16be0);
+}
+
+.Fonctionnement__titre {
+  display: flex;
+  margin-left: 7%;
+}
+
+.V1 {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 10%;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2);
+}
+.V1__numéro {
+  padding-right: 5px;
+  padding-left: 5px;
+  background: #9356DC;
+  color: white;
+  border-radius: 15px 15px 15px 15px;
+  position: relative;
+  right: 10px;
+}
+.V1__logo {
+  color: #9E9E9E;
+  margin-right: 10px;
+}
+.V2 {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 10%;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2);
+  background-color: #F0E3FF;
+}
+.V2__numéro {
+  padding-right: 5px;
+  padding-left: 5px;
+  background: #9356DC;
+  color: white;
+  border-radius: 15px 15px 15px 15px;
+  position: relative;
+  right: 10px;
+}
+.V2__logo {
+  color: #9356DC;
+  margin-right: 10px;
+}
+.Restaurants {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+.Restaurants__titre {
+  margin-left: 7%;
+}
+
+.Carte {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Carte__image {
+  box-sizing: border-box;
+  object-fit: cover;
+  width: 100%;
+  max-height: 120px;
+  border-radius: 20px 20px 0px 0px;
+}
+.Carte__fig {
+  border-radius: 0px 0px 20px 20px;
+  background: white;
+  color: black;
+  position: relative;
+}
+.Carte__titre {
+  font-family: "Roboto";
+  margin-top: 10px;
+  margin-bottom: 0%;
+  margin-left: 10px;
+}
+.Carte__text {
+  font-family: "Roboto";
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.Carte__coeurVide {
+  position: absolute;
+  left: 90%;
+  bottom: 20px;
+}
+.Carte__coeurPlein {
+  position: absolute;
+  left: 90%;
+  bottom: 20px;
+  visibility: hidden;
+}
+
+.imgBox {
+  display: flex;
+  flex-direction: column;
+}
+.imgBox__image {
+  box-sizing: border-box;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 20px 20px 0px 0px;
+  position: relative;
+  bottom: 20px;
+  margin-bottom: -20px;
+  padding-bottom: 20px;
+}
+.Menu > button {
+  background: linear-gradient(to bottom right, #FF79DA 5%, #9356DC);
+  border-radius: 30px 30px 30px 30px;
+  border-style: none;
+  padding: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Menu > button > a {
+  color: white;
+}
+
+.TitrePage {
+  position: relative;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.TitrePage__text {
+  font-family: "Shrikhand";
+}
+.TitrePage__coeurVide {
+  position: absolute;
+  left: 90%;
+}
+.TitrePage__coeurPlein {
+  position: absolute;
+  left: 90%;
+  visibility: hidden;
+}
+
+.Entrées__titre {
+  font-family: "Roboto";
+  font-size: 15px;
+  color: #9E9E9E;
+  border-bottom: 3px solid #99E2D0;
+  width: 30px;
+  margin-left: 10px;
+}
+
+.Plats__titre {
+  font-family: "Roboto";
+  font-size: 15px;
+  color: #9E9E9E;
+  border-bottom: 3px solid #99E2D0;
+  width: 30px;
+  margin-left: 10px;
+}
+
+.Desserts__titre {
+  font-family: "Roboto";
+  font-size: 15px;
+  color: #9E9E9E;
+  border-bottom: 3px solid #99E2D0;
+  width: 30px;
+  margin-left: 10px;
+}
+
+.CarteMenu {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2);
+}
+.CarteMenu__titre {
+  font-family: "Roboto";
+  font-size: 15px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+.CarteMenu__check {
+  visibility: hidden;
+}
+
+.DivMenu {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto";
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+}
+.DivMenu__text {
+  font-size: 12px;
+  margin-bottom: 0px;
+  margin-top: 2px;
+}
+.DivMenu__prix {
+  margin-bottom: 0px;
+  margin-top: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

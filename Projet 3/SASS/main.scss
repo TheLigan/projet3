@@ -1,10 +1,11 @@
 @import "utils/variables";
 @import "utils/mixins";
 @import "utils/extensions";
+@import "layout/footer";
 
 body {
     margin: 0px;
-
+    @extend %Footer;
 }
 
 header {
@@ -13,7 +14,7 @@ header {
     @include flexCenter;
 
     >.logo{
-        height: 25px;
+        @extend %FontTitre;
         margin-left: auto;
         margin-right: auto;
     }
@@ -22,6 +23,14 @@ header {
         font-size: 20px;
     }
 }
+
+a {
+    text-decoration: none;
+  }
+
+// ------------------------------------------------------------------------------------------------Index
+
+
 
 .localisation {
     background-color: $colour-localisation;
@@ -43,10 +52,283 @@ header {
     flex-wrap: nowrap;
     align-items: center;
 
-    >&__H1 {
+    >&__h2 {
         @extend %FontGrosText;
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 0px;
     }
     >&__p {
         @extend %FontText;
+        text-align: center;
+        margin-top: 5px;
+    }
+    >&__button {
+        @extend %FontText;
+        background: linear-gradient(to bottom right, $colour-secondary 5%, $colour-primary);
+        border-radius: 30px 30px 30px 30px;
+        margin-bottom: 50px;
+        border-style: none;
+        padding: 20px;
+        transition-property: all;
+        transition-duration: all 1000ms;
+        >a {
+            color: white;
+        }
+        &:hover {
+            background: linear-gradient(to bottom right, lighten($colour-secondary, 5) 5%, lighten($colour-primary, 5));
+            
+        }
+    }
+}
+
+.Fonctionnement {
+    >&__titre{
+        @extend %FontGrosText;
+        display: flex;
+        margin-left: 7%;
+    }
+    
+}
+
+.V1 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 10%;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 6px 6px 25px rgb(0 0 0 / 20%);
+
+    >&__numéro {
+        padding-right: 5px;
+        padding-left: 5px;
+        background: $colour-primary;
+        color: white;
+        border-radius: 15px 15px 15px 15px;
+        position: relative;
+        right: 10px;
+    }
+    >&__logo {
+        color: $colour-iconesV1;
+        margin-right: 10px;
+    }
+    >&__text {
+        @extend %FontText;
+    }
+}
+
+.V2 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 10%;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 6px 6px 25px rgb(0 0 0 / 20%);
+    background-color: $colour-fondV2;
+
+    >&__numéro {
+        padding-right: 5px;
+        padding-left: 5px;
+        background: $colour-primary;
+        color: white;
+        border-radius: 15px 15px 15px 15px;
+        position: relative;
+        right: 10px;
+    }
+    >&__logo {
+        color: $colour-primary;
+        margin-right: 10px;
+    }
+    >&__text {
+        @extend %FontText;
+    }
+}
+
+.Restaurants {
+    background-color: $colour-accueil;
+    display: flex;
+    flex-direction: column;
+
+    >&__titre{
+        @extend %FontGrosText;
+        margin-left: 7%;
+    }
+}
+
+.Carte {
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+
+    >&__image{
+        box-sizing: border-box;
+        object-fit: cover;
+        width: 100%;
+        max-height: 120px;
+        border-radius: 20px 20px 0px 0px;
+    }
+    >&__fig{
+        border-radius: 0px 0px 20px 20px;
+        background: white;
+        color: black;
+        position: relative;
+    }
+
+    &__titre{
+        font-family: $font-text;
+        margin-top: 10px;
+        margin-bottom: 0%;
+        margin-left: 10px;
+    }
+    &__text{
+        font-family: $font-text;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    &__coeurVide{
+        position: absolute;
+        left: 90%;
+        bottom: 20px;
+    }
+    &__coeurPlein{
+        position: absolute;
+        left: 90%;
+        bottom: 20px;
+        visibility: hidden;
+    }
+}
+
+// ------------------------------------------------------------------------------------------------Menus
+
+.imgBox{
+    display: flex;
+    flex-direction: column;
+    >&__image{
+        box-sizing: border-box;
+        object-fit: cover;
+        max-height: 200px;
+    }
+}
+
+.Menu{
+    display: flex;
+    flex-direction: column;
+    background-color: $colour-accueil;
+    border-radius: 20px 20px 0px 0px;
+    position: relative;
+    bottom: 20px;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+
+    >button {
+        @extend %FontText;
+        background: linear-gradient(to bottom right, $colour-secondary 5%, $colour-primary);
+        border-radius: 30px 30px 30px 30px;
+        border-style: none;
+        padding: 20px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        >a {
+            color: white;
+        }
+    }
+}
+
+.TitrePage{
+    position: relative;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >&__text{
+        font-family: $font-titles;
+    }
+    >&__coeurVide{
+        position: absolute;
+        left: 90%;
+    }
+    >&__coeurPlein{
+        position: absolute;
+        left: 90%;
+        visibility: hidden;
+    }
+}
+
+.Entrées{
+    >&__titre{
+        font-family: $font-text;
+        font-size: 15px;
+        color: $colour-iconesV1;
+        border-bottom: 3px solid $colour-tertiary;
+        width: 30px;
+        margin-left: 10px;
+    }
+}
+
+.Plats{
+    >&__titre{
+        font-family: $font-text;
+        font-size: 15px;
+        color: $colour-iconesV1;
+        border-bottom: 3px solid $colour-tertiary;
+        width: 30px;
+        margin-left: 10px;
+    }
+}
+
+.Desserts{
+    >&__titre{
+        font-family: $font-text;
+        font-size: 15px;
+        color: $colour-iconesV1;
+        border-bottom: 3px solid $colour-tertiary;
+        width: 30px;
+        margin-left: 10px;
+    }
+}
+
+.CarteMenu{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 6px 6px 25px rgb(0 0 0 / 20%);
+
+    >&__titre{
+        font-family: $font-text;
+        font-size: 15px;
+        margin-left: 10px;
+        margin-bottom: 0px;
+    }
+    >&__check{
+        visibility: hidden;
+    }
+}
+
+.DivMenu {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-text;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    >&__text{
+        font-size: 12px;
+        margin-bottom: 0px;
+        margin-top: 2px;
+    }
+    >&__prix{
+        margin-bottom: 0px;
+        margin-top: 2px;
     }
 }

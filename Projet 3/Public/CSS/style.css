@@ -41,6 +41,7 @@ body footer > .footerList {
 }
 body footer > .footerList > a {
   color: white;
+  margin-bottom: 5px;
 }
 @media all and (min-width: 769px) {
   body footer > .footerList {
@@ -50,7 +51,7 @@ body footer > .footerList > a {
 
 html {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1920px;
 }
 
 body {
@@ -173,7 +174,7 @@ a {
 }
 .blocText__button:hover {
   background-image: linear-gradient(to bottom right, #ff93e1 5%, #a16be0);
-  box-shadow: 10px 11px 0px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 11px 14px 0px rgba(0, 0, 0, 0.3);
 }
 
 @media all and (min-width: 769px) {
@@ -250,12 +251,35 @@ a {
   display: flex;
   flex-direction: column;
 }
+@media all and (min-width: 769px) {
+  .Restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+  }
+}
 .Restaurants__titre {
+  margin-bottom: 0px;
   margin-left: 7%;
+  margin-top: 40px;
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Restaurants__titre {
     margin-left: 4%;
+  }
+}
+@media all and (min-width: 769px) {
+  .Restaurants__titre {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+@media all and (min-width: 769px) {
+  .Restaurants > a {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 48%;
   }
 }
 
@@ -269,6 +293,15 @@ a {
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Carte {
     width: 92%;
+  }
+}
+@media all and (min-width: 769px) {
+  .Carte {
+    margin-bottom: 30px;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
   }
 }
 .Carte__image {
@@ -285,7 +318,8 @@ a {
 }
 @media all and (min-width: 769px) {
   .Carte__image {
-    max-height: 300px;
+    max-height: 200px;
+    width: auto;
   }
 }
 .Carte__fig {
@@ -313,6 +347,7 @@ a {
 }
 .Carte__coeurPlein {
   background-image: linear-gradient(to bottom right, #FF79DA 5%, #9356DC);
+  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   position: absolute;
@@ -332,7 +367,7 @@ a {
   padding: 5px;
   font-family: "Roboto";
   background-color: aquamarine;
-  color: rgb(107, 162, 68);
+  color: rgb(55, 99, 23);
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Carte__nouveau {
@@ -342,8 +377,8 @@ a {
 }
 @media all and (min-width: 769px) {
   .Carte__nouveau {
-    left: 87%;
-    bottom: 300px;
+    left: 75%;
+    bottom: 200px;
   }
 }
 
@@ -354,7 +389,7 @@ a {
 .imgBox__image {
   box-sizing: border-box;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 220px;
 }
 
 .Menu {
@@ -377,6 +412,8 @@ a {
   padding-top: 12px;
   padding-bottom: 12px;
   width: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   transition: all;
@@ -387,7 +424,7 @@ a {
 }
 .Menu > button:hover {
   background-image: linear-gradient(to bottom right, #ff93e1 5%, #a16be0);
-  box-shadow: 10px 11px 0px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 11px 14px 0px rgba(0, 0, 0, 0.3);
 }
 
 .TitrePage {
@@ -404,6 +441,7 @@ a {
 }
 .TitrePage__text {
   font-family: "Shrikhand";
+  margin-left: 10px;
 }
 .TitrePage__coeurVide {
   position: absolute;
@@ -411,6 +449,7 @@ a {
 }
 .TitrePage__coeurPlein {
   background-image: linear-gradient(to bottom right, #FF79DA 5%, #9356DC);
+  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   position: absolute;
@@ -441,6 +480,7 @@ a {
   color: #9E9E9E;
   border-bottom: 3px solid #99E2D0;
   width: 30px;
+  margin-top: -10px;
   margin-left: 20px;
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
@@ -529,10 +569,18 @@ a {
   }
 }
 .blocMenu__check {
-  margin: 0%;
+  background-color: #99E2D0;
+  overflow: hidden;
+  padding: 7%;
   width: 10%;
-  height: 100%;
-  font-size: 0%;
+  transform: rotate(0);
+  transition: all 500ms linear;
+}
+
+.blocMenu:hover + .blocMenu__check {
+  transform: rotate(360);
+  width: 10%;
+  padding: 7%;
 }
 
 .CarteMenu {

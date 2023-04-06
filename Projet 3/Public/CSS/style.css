@@ -4,7 +4,7 @@ header > .logo {
   font-size: 25px;
 }
 
-.Menu > button, .V1__text, .blocText__button, .blocText__p, .localisation__text {
+.Menu > a, .V1__text, .blocText__button, .blocText__p, .localisation__text {
   font-family: "Roboto";
   font-size: 15px;
 }
@@ -168,8 +168,6 @@ a {
   padding-bottom: 12px;
   transition: all;
   transition-duration: 1000ms;
-}
-.blocText__button > a {
   color: white;
 }
 .blocText__button:hover {
@@ -402,13 +400,13 @@ a {
   margin-bottom: -20px;
   padding-bottom: 20px;
 }
-.Menu > button {
+.Menu > a {
   background: linear-gradient(to bottom right, #FF79DA 5%, #9356DC);
   box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2);
   border-radius: 30px 30px 30px 30px;
   border-style: none;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 45px;
+  padding-right: 45px;
   padding-top: 12px;
   padding-bottom: 12px;
   width: 50%;
@@ -418,11 +416,10 @@ a {
   margin-right: auto;
   transition: all;
   transition-duration: 1000ms;
-}
-.Menu > button > a {
   color: white;
+  text-align: center;
 }
-.Menu > button:hover {
+.Menu > a:hover {
   background-image: linear-gradient(to bottom right, #ff93e1 5%, #a16be0);
   box-shadow: 10px 11px 14px 0px rgba(0, 0, 0, 0.3);
 }
@@ -485,10 +482,6 @@ a {
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Entrées__titre {
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 45px;
-    padding-left: 10px;
     font-size: 20px;
   }
 }
@@ -514,10 +507,6 @@ a {
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Plats__titre {
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 25px;
-    padding-left: 10px;
     font-size: 20px;
   }
 }
@@ -543,10 +532,6 @@ a {
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .Desserts__titre {
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 55px;
-    padding-left: 10px;
     font-size: 20px;
   }
 }
@@ -560,7 +545,7 @@ a {
   background-color: white;
   border-radius: 15px 15px 15px 15px;
   box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2);
-  align-items: center;
+  overflow: hidden;
 }
 @media all and (min-width: 426px) and (max-width: 768px) {
   .blocMenu {
@@ -569,20 +554,47 @@ a {
   }
 }
 .blocMenu__check {
+  display: flex;
+  width: 0%;
   background-color: #99E2D0;
-  overflow: hidden;
-  padding: 7%;
-  width: 10%;
-  transform: rotate(0);
-  transition: all 500ms linear;
+  color: white;
+  border-radius: 0px 15px 15px 0px;
+  translate: 100%;
+  rotate: 0deg;
+  align-items: center;
+  justify-content: center;
 }
 
-.blocMenu:hover + .blocMenu__check {
-  transform: rotate(360);
-  width: 10%;
-  padding: 7%;
+.blocMenu:hover > .blocMenu__check {
+  animation: check 1000ms linear;
+  animation-fill-mode: forwards;
 }
 
+@keyframes check {
+  0% {
+    width: 0%;
+    translate: 0%;
+  }
+  100% {
+    translate: 0%;
+    width: 20%;
+  }
+}
+.blocMenu:hover .fa-circle-check {
+  animation: check2 1500ms linear;
+}
+
+@keyframes check2 {
+  20% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 360deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
 .CarteMenu {
   display: flex;
   flex-wrap: wrap;
@@ -602,13 +614,16 @@ a {
   font-family: "Roboto";
   margin-left: 10px;
   margin-right: 10px;
-  width: 100%;
+  width: 90%;
 }
 .DivMenu__text {
+  overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 0px;
   margin-top: 2px;
+  white-space: nowrap;
+  width: 60%;
 }
 .DivMenu__prix {
   margin-bottom: 0px;

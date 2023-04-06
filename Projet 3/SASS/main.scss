@@ -120,9 +120,7 @@ a {
         padding-bottom: 12px;
         transition: all;
         transition-duration: 1000ms;
-        >a {
-            color: white;
-        }
+        color: white;
         &:hover {
             background-image: linear-gradient(to bottom right, lighten($colour-secondary, 5) 5%, lighten($colour-primary, 5));
             box-shadow: 10px 11px 14px 0px rgb(0 0 0 / 30%);
@@ -348,14 +346,14 @@ a {
     padding-bottom: 20px;
     
 
-    >button {
+    >a {
         @extend %FontText;
         background: linear-gradient(to bottom right, $colour-secondary 5%, $colour-primary);
         box-shadow: 6px 6px 25px rgb(0 0 0 / 20%);
         border-radius: 30px 30px 30px 30px;
         border-style: none;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 45px;
+        padding-right: 45px;
         padding-top: 12px;
         padding-bottom: 12px;
         width: 50%;
@@ -365,9 +363,9 @@ a {
         margin-right: auto;
         transition: all;
         transition-duration: 1000ms;
-        >a {
-            color: white;
-        }
+        color: white;
+        text-align: center;
+
         &:hover {
             background-image: linear-gradient(to bottom right, lighten($colour-secondary, 5) 5%, lighten($colour-primary, 5));
             box-shadow: 10px 11px 14px 0px rgb(0 0 0 / 30%);
@@ -427,10 +425,6 @@ a {
         margin-top: -10px;
         margin-left: 20px;
         @media all and (min-width: 426px) and (max-width: 768px){
-            margin-left: auto;
-            margin-right: auto;
-            padding-right: 45px;
-            padding-left: 10px;
             font-size: 20px;
         }
     }
@@ -451,10 +445,6 @@ a {
         width: 30px;
         margin-left: 20px;
         @media all and (min-width: 426px) and (max-width: 768px){
-            margin-left: auto;
-            margin-right: auto;
-            padding-right: 25px;
-            padding-left: 10px;
             font-size: 20px;
         }
     }
@@ -475,10 +465,6 @@ a {
         width: 30px;
         margin-left: 20px;
         @media all and (min-width: 426px) and (max-width: 768px){
-            margin-left: auto;
-            margin-right: auto;
-            padding-right: 55px;
-            padding-left: 10px;
             font-size: 20px;
         }
     }
@@ -493,25 +479,42 @@ a {
     background-color: white;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 6px 6px 25px rgb(0 0 0 / 20%);
-    align-items: center;
+    overflow: hidden;
     @media all and (min-width: 426px) and (max-width: 768px){
         width: 80%;
         height: 65px;
     }
     >&__check {
-        background-color: $colour-tertiary;
-        overflow: hidden;
-        padding: 7%;
-        width: 10%;
-        transform: rotate(0);
-        transition: all 500ms linear; 
+        display: flex;
+        width: 0%;
+        background-color: #99E2D0;
+        color: white;
+        border-radius: 0px 15px 15px 0px;
+        translate: 100%;
+        rotate: 0deg;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-.blocMenu:hover + .blocMenu__check {
-    transform: rotate(360);
-    width: 10%;
-    padding: 7%;
+.blocMenu:hover > .blocMenu__check {
+    animation: check 1000ms linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes check {
+    0% {width: 0%; translate: 0%;}
+    100% {translate: 0%; width: 20%;}
+}
+
+.blocMenu:hover .fa-circle-check {
+    animation: check2 1500ms linear;
+}
+
+@keyframes check2 {
+    20% {rotate: 0deg;}
+    50% {rotate: 360deg;}
+    100% {rotate: 360deg;}
 }
 
 .CarteMenu{
@@ -534,13 +537,16 @@ a {
     font-family: $font-text;
     margin-left: 10px;
     margin-right: 10px;
-    width: 100%;
+    width: 90%;
     
     >&__text{
+        overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 0px;
         margin-top: 2px;
+        white-space: nowrap;
+        width: 60%;
     }
     >&__prix{
         margin-bottom: 0px;

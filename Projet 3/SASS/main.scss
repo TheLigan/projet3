@@ -356,7 +356,6 @@ a {
         padding-right: 45px;
         padding-top: 12px;
         padding-bottom: 12px;
-        width: 50%;
         margin-bottom: 10px;
         margin-top: 10px;
         margin-left: auto;
@@ -427,7 +426,19 @@ a {
         @media all and (min-width: 426px) and (max-width: 768px){
             font-size: 20px;
         }
+        @media all and (min-width: 1400px){
+            font-size: 20px;
+            margin-right: 100%;
+        }
+        
     }
+
+    @media all and (min-width: 1400px){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
 }
 
 .Plats{
@@ -447,6 +458,15 @@ a {
         @media all and (min-width: 426px) and (max-width: 768px){
             font-size: 20px;
         }
+        @media all and (min-width: 1400px){
+            font-size: 20px;
+            margin-right: 100%;
+        }
+    }
+    @media all and (min-width: 1400px){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 
@@ -467,6 +487,15 @@ a {
         @media all and (min-width: 426px) and (max-width: 768px){
             font-size: 20px;
         }
+        @media all and (min-width: 1400px){
+            font-size: 20px;
+            margin-right: 100%;
+        }
+    }
+    @media all and (min-width: 1400px){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 
@@ -484,14 +513,18 @@ a {
         width: 80%;
         height: 65px;
     }
+    @media all and (min-width: 1400px){
+        width: 30%;
+        height: 65px;
+    }
     >&__check {
         display: flex;
         width: 0%;
         background-color: #99E2D0;
         color: white;
         border-radius: 0px 15px 15px 0px;
-        translate: 100%;
-        rotate: 0deg;
+        transform:translate(100%);
+        transform:rotate(0deg);
         align-items: center;
         justify-content: center;
     }
@@ -503,8 +536,8 @@ a {
 }
 
 @keyframes check {
-    0% {width: 0%; translate: 0%;}
-    100% {translate: 0%; width: 20%;}
+    0% {width: 0%; transform:translate(0%);}
+    100% {transform:translate(0%); width: 20%;}
 }
 
 .blocMenu:hover .fa-circle-check {
@@ -512,9 +545,9 @@ a {
 }
 
 @keyframes check2 {
-    20% {rotate: 0deg;}
-    50% {rotate: 360deg;}
-    100% {rotate: 360deg;}
+    20% {transform:rotate(0deg);}
+    50% {transform:rotate(360deg);}
+    100% {transform:rotate(360deg);}
 }
 
 .CarteMenu{
@@ -524,6 +557,7 @@ a {
     >&__titre{
         text-overflow: ellipsis;
         font-family: $font-text;
+        width: 100%;
         font-size: 15px;
         margin-left: 10px;
         margin-bottom: 0px;
@@ -536,7 +570,7 @@ a {
     justify-content: space-between;
     font-family: $font-text;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: -40px;
     width: 90%;
     
     >&__text{

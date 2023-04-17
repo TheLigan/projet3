@@ -1,0 +1,35 @@
+%Footer{
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        background-color: #454545;
+    
+        >h2{
+            font-family: $font-titles;
+            font-size: 15px;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 30px;
+            @media all and (min-width: 769px){
+                margin-left: 55px;
+            }
+        }
+        >.footerList{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 30px;
+            >a{
+                color: white;
+                margin-bottom: 5px;
+            }
+            @media all and (min-width: 769px){
+                margin-left: 55px;
+            }
+        }
+    }
+
+}

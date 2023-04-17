@@ -1,0 +1,16 @@
+@import "variables";
+
+%FontTitre {
+    font-family: $font-titles;
+    font-size: 25px;
+}
+
+%FontText {
+    font-family: $font-text;
+    font-size: 15px;
+}
+
+%FontGrosText {
+    font-family: $font-text;
+    font-size: 25px;
+}
